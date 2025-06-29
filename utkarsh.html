@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-Form Flex Layout with Navigation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        nav {
+            background: #007bff;
+            padding: 16px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            padding: 40px 0;
+            background: #f5f5f5;
+        }
+        .form-box {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 24px 20px;
+            width: 320px;
+        }
+        .form-box h3 { margin-top: 0; }
+        label { display: block; margin-top: 12px; }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 7px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button { background: #007bff; color: #fff; border: none; margin-top: 15px; }
+        .result { margin-top: 12px; font-weight: bold; }
+        @media (max-width: 900px) {
+            .container { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="#age">Age Calculator</a>
+    <a href="#bmi">BMI Calculator</a>
+    <a href="#emi">Loan EMI Calculator</a>
+    <a href="#feedback">Feedback</a>
+    <a href="#travel">Travel Booking</a>
+    <a href="#event">Event Registration</a>
+</nav>
+<div class="container">
+
+    <!-- Age Calculator -->
+    <div class="form-box" id="age">
+        <h3>Age Calculator</h3>
+        <form onsubmit="event.preventDefault(); calcAge();">
+            <label for="birthDate">Birth Date:</label>
+            <input type="date" id="birthDate" required>
+            <button type="submit">Calculate Age</button>
+            <div class="result" id="ageResult"></div>
+        </form>
+    </div>
+
+    <!-- BMI Calculator -->
+    <div class="form-box" id="bmi">
+        <h3>BMI Calculator</h3>
+        <form onsubmit="event.preventDefault(); calcBMI();">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" required>
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" required>
+            <button type="submit">Calculate BMI</button>
+            <div class="result" id="bmiResult"></div>
+        </form>
+    </div>
+
+    <!-- Loan EMI Calculator -->
+    <div class="form-box" id="emi">
+        <h3>Loan EMI Calculator</h3>
+        <form onsubmit="event.preventDefault(); calcEMI();">
+            <label for="principal">Principal (₹):</label>
+            <input type="number" id="principal" required>
+            <label for="rate">Interest Rate (% per annum):</label>
+            <input type="number" id="rate" required>
+            <label for="tenure">Tenure (years):</label>
+            <input type="number" id="tenure" required>
+            <button type="submit">Calculate EMI</button>
+            <div class="result" id="emiResult"></div>
+        </form>
+    </div>
+
+    <!-- Feedback Form -->
+    <div class="form-box" id="feedback">
+        <h3>Feedback Form</h3>
+        <form>
+            <label for="fbname">Name:</label>
+            <input type="text" id="fbname" name="fbname" required>
+            <label for="fbemail">Email:</label>
+            <input type="email" id="fbemail" name="fbemail" required>
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="3" required></textarea>
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" required>
+                <option value="">Select</option>
+                <option value="5">Excellent</option>
+                <option value="4">Good</option>
+                <option value="3">Average</option>
+                <option value="2">Poor</option>
+                <option value="1">Very Poor</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Travel Booking Form -->
+    <div class="form-box" id="travel">
+        <h3>Travel Booking</h3>
+        <form>
+            <label for="tname">Full Name:</label>
+            <input type="text" id="tname" name="tname" required>
+            <label for="temail">Email:</label>
+            <input type="email" id="temail" name="temail" required>
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" required>
+            <label for="tdate">Travel Date:</label>
+            <input type="date" id="tdate" name="tdate" required>
+            <label for="passengers">Passengers:</label>
+            <input type="number" id="passengers" name="passengers" min="1" required>
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+
+    <!-- Event Registration Form -->
+    <div class="form-box" id="event">
+        <h3>Event Registration</h3>
+        <form>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="eventname">Event Name:</label>
+            <input type="text" id="eventname" name="eventname" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+</div>
+<script>
+function calcAge() {
+    var birthDate = new Date(document.getElementById("birthDate").value);
+    var today = new Date();
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) { age--; }
+    document.getElementById("ageResult").textContent = "Your age is: " + age + " years";
+}
+function calcBMI() {
+    var h = parseFloat(document.getElementById("height").value) / 100;
+    var w = parseFloat(document.getElementById("weight").value);
+    if (h > 0 && w > 0) {
+        var bmi = (w / (h * h)).toFixed(2);
+        document.getElementById("bmiResult").textContent = "Your BMI is: " + bmi;
+    } else {
+        document.getElementById("bmiResult").textContent = "Please enter valid values.";
+    }
+}
+function calcEMI() {
+    var p = parseFloat(document.getElementById("principal").value);
+    var r = parseFloat(document.getElementById("rate").value) / 12 / 100;
+    var n = parseFloat(document.getElementById("tenure").value) * 12;
+    if (p > 0 && r > 0 && n > 0) {
+        var emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+        document.getElementById("emiResult").textContent = "Your EMI is: ₹" + emi.toFixed(2);
+    } else {
+        document.getElementById("emiResult").textContent = "Please enter valid values.";
+    }
+}
+</script>
+</body>
+</html>
