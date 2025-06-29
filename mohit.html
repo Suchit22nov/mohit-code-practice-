@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Form Submission</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        form { max-width: 400px; margin: auto; }
+        label { display: block; margin-top: 15px; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; }
+        button { margin-top: 20px; padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <h2>Exam Form Submission</h2>
+    <form action="#" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="roll">Roll Number:</label>
+        <input type="text" id="roll" name="roll" required>
+
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" required>
+
+        <label for="exam">Exam Name:</label>
+        <select id="exam" name="exam" required>
+            <option value="">Select Exam</option>
+            <option value="midterm">Midterm</option>
+            <option value="final">Final</option>
+            <option value="supplementary">Supplementary</option>
+        </select>
+
+        <label for="date">Exam Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
