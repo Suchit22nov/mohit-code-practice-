@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple E-Commerce Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
+        nav {
+            background: #222;
+            color: #fff;
+            padding: 16px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 16px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 20px;
+            text-align: center;
+            transition: box-shadow 0.2s;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .product-card img {
+            width: 100%;
+            max-width: 180px;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 16px;
+        }
+        .product-title {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        .product-desc {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 12px;
+        }
+        .product-price {
+            font-size: 18px;
+            color: #007bff;
+            margin-bottom: 14px;
+            font-weight: bold;
+        }
+        .add-cart-btn {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .add-cart-btn:hover {
+            background: #0056b3;
+        }
+        @media (max-width: 600px) {
+            nav a { display: block; margin: 10px 0; }
+            .container { margin: 20px auto; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Categories</a>
+        <a href="#">Cart</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="container">
+        <h2 style="text-align:center; margin-bottom:30px;">Featured Products</h2>
+        <div class="grid">
+            <div class="product-card">
+                <img src="4.jpg" alt="">
+                <div class="product-title">Adidas Running Shoes</div>
+                <div class="product-desc">Comfortable and stylish running shoes for all ages.</div>
+                <div class="product-price">₹1,999</div>
+                <button class="add-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="33.jpg" alt="">
+                <div class="product-title">JBL Wireless Headphones</div>
+                <div class="product-desc">High-quality sound with noise cancellation.</div>
+                <div class="product-price">₹2,499</div>
+                <button class="add-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="3.jpg" alt="Product 3">
+                <div class="product-title">One Plus Smart Watch</div>
+                <div class="product-desc">Track your fitness and stay connected on the go.</div>
+                <div class="product-price">₹3,299</div>
+                <button class="add-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="5.jpg" alt="">
+                <div class="product-title">Travel Backpack</div>
+                <div class="product-desc">Spacious and durable backpack for all your needs.</div>
+                <div class="product-price">₹1,799</div>
+                <button class="add-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="11.jpg" alt="">
+                <div class="product-title">Canon Digital Camera</div>
+                <div class="product-desc">Capture your moments in high definition.</div>
+                <div class="product-price">₹5,999</div>
+                <button class="add-cart-btn">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="22.jpg" alt="">
+                <div class="product-title">Bestseller Book</div>
+                <div class="product-desc">A must-read book for every enthusiast.</div>
+                <div class="product-price">₹499</div>
+                <button class="add-cart-btn">Add to Cart</button>
+                
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

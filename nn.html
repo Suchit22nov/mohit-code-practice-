@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Delivery Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+
+</head>
+<body>
+    <header>
+        <h1>QuickBite Food Delivery</h1>
+        <p>Delicious food delivered to your doorstep</p>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#order">Order</a>
+        <a href="#contact">Contact</a>
+        <a href="#login">Login</a>
+        </nav>
+    <section class="hero">
+        <h1>Order Your Favorite Food Online</h1>
+        <p>Fast delivery, fresh ingredients, and a wide variety of cuisines.</p>
+        <button>Order Now</button>
+    </section>
+
+    <section class="login-section" id="login">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <a href="#" class="register-link">Don't have an account? Register</a>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <h2>Our Popular Dishes</h2>
+        <div class="menu-items">
+            <div class="menu-card">
+                <img src="4444.jpg" alt="Chowmein">
+                <div class="info">
+                    <h3>Chowmein</h3>
+                    <p>Chow mein is a dish of stir-fried Chinese-style noodles that can be served with proteins, vegetables or gravy.</p>
+                    <div class="price">₹240</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="333.jpg" alt="Momo">
+                <div class="info">
+                    <h3>Momo</h3>
+                    <p>Momos: Steamed, fried, pan-fried, or baked. So many ways to enjoy these delicious dumplings!</p>
+                    <div class="price">₹180</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="222.jpg" alt="Fried Rice">
+               <div class="info">
+                    <h3>Fried Rice</h3>
+                    <p>A popular and flavoured rice recipe made with cooked rice, finely chopped veggies and seasoning ingredients.</p>
+                    <div class="price">₹150</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="111.jpg" alt="Manchurian">
+                <div class="info">
+                    <h3>Manchurian</h3>
+                    <p>Manchurian is a popular Indo-Chinese dish, typically consisting of fried vegetable or meat balls in a spicy, sweet, and savory sauce. </p>
+                    <div class="price">₹240</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="555.jpg" alt="French Fries">
+                <div class="info">
+                    <h3>French Fries</h3>
+                    <p>Crispy and golden French fries, the perfect side dish or snack!</p>
+                    <div class="price">₹130</div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="666.jpg" alt="Chilli Paneer">
+                <div class="info">
+                    <h3>Chilli Paneer</h3>
+                    <p>Chilli Paneer is a popular Indo-Chinese dish made with paneer (Indian cottage cheese) and a spicy, tangy sauce.</p>
+                    <div class="price">₹240</div>
+                </div>
+            </div>
+    </section>
+
+    <section class="order-section" id="order">
+        <h2>Place Your Order</h2>
+        <form>
+            <label for="dish">Select Dish</label>
+            <select id="dish" name="dish" required>
+                <option value="">--Choose a dish--</option>
+                <option value="chowmein">Chowmein</option>
+                <option value="momo">Momo</option>
+                <option value="friedrice">Fried Rice</option>
+                <option value="manchurian">Manchurian</option>
+                <option value="fries">French Fries</option>
+                <option value="chillipaneer">Chilli Paneer</option>
+            </select>
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+            <label for="address">Delivery Address</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    
+    <footer>
+       &copy; 2025 QuickBite Food Delivery. All rights reserved.
+    </footer>
+
+    <style>
+    .order-section {
+       background: #f9f9f9;
+       padding: 40px 20px;
+       max-width: 500px;
+       margin: 40px auto 0 auto;
+       border-radius: 10px;
+       box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .order-section h2 {
+       text-align: center;
+       color: #333;
+       margin-bottom: 24px;
+       font-size: 2em;
+    }
+    .order-section form {
+       display: flex;
+       flex-direction: column;
+       gap: 16px;
+    }
+    .order-section label {
+       font-weight: 500;
+       color: #444;
+       margin-bottom: 4px;
+    }
+    .order-section input[type="number"],
+    .order-section select,
+    .order-section textarea {
+       padding: 10px;
+       border: 1px solid #ccc;
+       border-radius: 5px;
+       font-size: 1em;
+       background: #fff;
+       transition: border 0.2s;
+    }
+    .order-section input[type="number"]:focus,
+    .order-section select:focus,
+    .order-section textarea:focus {
+       border: 1.5px solid #ff9800;
+       outline: none;
+    }
+    .order-section button[type="submit"] {
+       background: #ff9800;
+       color: #fff;
+       border: none;
+       padding: 12px;
+       border-radius: 5px;
+       font-size: 1.1em;
+       font-weight: bold;
+       cursor: pointer;
+       transition: background 0.2s;
+       margin-top: 8px;
+    }
+    .order-section button[type="submit"]:hover {
+       background: #e68900;
+    }
+    @media (max-width: 600px) {
+       .order-section {
+          padding: 20px 8px;
+       }
+    }
+    </style>
+</body>
+</html>

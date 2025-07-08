@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.page-container {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 32px 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* Headings */
+.page-container h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #333;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: #fafafa;
+    transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #0078d7;
+    outline: none;
+}
+
+/* Button Styles */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #0078d7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #005fa3;
+}
+
+/* Specific Page Styles */
+.login-page .btn {
+    background: #28a745;
+}
+.login-page .btn:hover {
+    background: #1e7e34;
+}
+
+.order-page .btn {
+    background: #ffc107;
+    color: #333;
+}
+.order-page .btn:hover {
+    background: #e0a800;
+    color: #fff;
+}
+
+.contact-page .btn {
+    background: #17a2b8;
+}
+.contact-page .btn:hover {
+    background: #117a8b;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .page-container {
+        padding: 18px 8px;
+    }
+}

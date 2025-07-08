@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Positioning Example</title>
+    <style>
+        .container {
+            position: relative;
+            width: 400px;
+            height: 250px;
+            border: 2px solid #333;
+            margin: 40px auto;
+            background: #f0f0f0;
+        }
+        .static-box {
+            position: static;
+            background: #b3e5fc;
+            padding: 10px;
+        }
+        .relative-box {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            background: #ffe082;
+            padding: 10px;
+        }
+        .absolute-box {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ffab91;
+            padding: 10px;
+        }
+        .fixed-box {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: #c5e1a5;
+            padding: 10px;
+        }
+        .sticky-box {
+            position: sticky;
+            top: 0;
+            background: #d1c4e9;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sticky-box">Sticky Position (sticks to top when scrolling)</div>
+    <div class="container">
+        <div class="static-box">Static Position (default)</div>
+        <div class="relative-box">Relative Position (moved 20px down & right)</div>
+        <div class="absolute-box">Absolute Position (top-right corner of container)</div>
+    </div>
+    <div class="fixed-box">Fixed Position (bottom-right of viewport)</div>
+</body>
+</html>
